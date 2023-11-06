@@ -1,4 +1,4 @@
-const REDIRECT_URI = `http://localhost:3000/oauth`;
+const REDIRECT_URI = `${process.env.REACT_APP_SERVER_URI}/oauth`;
 const {
   REACT_APP_KAKAO_CLIENT_ID: KAKAO_KEY,
   REACT_APP_GOOGLE_CLIENT_ID: GOOGLE_Client_ID,
