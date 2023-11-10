@@ -5,7 +5,7 @@ export interface MusicItemType {
   readonly id: number;
 }
 
-export interface GenreItemType {
+export interface GenreListItemType {
   genre_name: string;
   image_url: string;
   genre_id: number;
@@ -25,7 +25,7 @@ export interface PlayerControlModuleType {
   currentTime: string;
   endTime: string;
 }
-export interface PlayListType {
+export interface GenreMusicType {
   genre_title: string;
   genre_id: number;
   music_list: MusicItemType[];

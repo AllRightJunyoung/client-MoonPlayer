@@ -1,8 +1,8 @@
 import * as Styled from './MusicPage.styled';
 
-import { Navigation, Genre, Main, Footer, CustomPlayList } from 'Music/components';
+import { NavBar, Genre, Main, Footer, CustomPlayList } from 'Music/components';
 import { usePlayerController, useMusicPageUIController } from 'Music/hooks';
-import { Dialog } from 'common/components';
+import { Dialog } from 'shared/components';
 
 const MusicPage = () => {
   const { musicPlayer, playerModuleSelector } = usePlayerController();
@@ -12,7 +12,7 @@ const MusicPage = () => {
     <>
       <Dialog />
       <Styled.Layout direction="column">
-        <Navigation />
+        <NavBar />
         <Genre />
         <Main />
         {playerModuleSelector.music && musicPlayer}
