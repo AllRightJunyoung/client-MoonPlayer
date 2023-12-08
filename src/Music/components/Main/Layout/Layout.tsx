@@ -4,12 +4,14 @@ import { useMusicPageUIController } from 'Music/hooks';
 import { useResolution } from 'shared/hooks';
 import GenreMusicLayout from '../GenreMusic/Layout';
 import PlayerLayout from '../Player/Layout';
+import { Spinner } from 'shared/components';
 
-const Layout = () => {
+const MainLayout = () => {
   const { isOpenMusicList } = useMusicPageUIController();
   const { resolution, setResolution } = useResolution();
 
   useEffect(() => {
+    // 새로고침 발생시 상태값 초기화 되서 넣어줌
     return window.innerWidth >= 1200
       ? setResolution('DESKTOP')
       : window.innerWidth >= 768
@@ -33,4 +35,4 @@ const Layout = () => {
   );
 };
 
-export default Layout;
+export default MainLayout;

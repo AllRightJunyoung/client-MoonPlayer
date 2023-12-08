@@ -3,18 +3,19 @@ import * as Styled from './NavBar.styled';
 import { IconButton } from 'shared/components';
 import { useMusicPageUIController } from 'Music/hooks';
 import useLogin from 'Login/hooks/useLogin';
+import { memo, useCallback } from 'react';
 
 export const NavBar = () => {
   const { onhandleOpenCustomPlayListUI, onhandleOpenAddPlayListUI } = useMusicPageUIController();
   const { signOut } = useLogin();
 
-  const handleBracketButton = () => {
+  const handleBracketButton = useCallback(() => {
     signOut();
-  };
-  const handleMusicButton = () => {
+  }, []);
+  const handleMusicButton = useCallback(() => {
     onhandleOpenCustomPlayListUI(true);
     onhandleOpenAddPlayListUI(true);
-  };
+  }, []);
 
   return (
     <Styled.Layout direction="row" justifyContent="space-between" alignItems="center">
@@ -29,4 +30,4 @@ export const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default memo(NavBar);

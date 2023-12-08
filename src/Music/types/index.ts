@@ -25,28 +25,37 @@ export interface PlayerControlModuleType {
   currentTime: string;
   endTime: string;
 }
-export interface GenreMusicType {
+export interface ResponseGenreMusicType {
+  status: boolean;
   genre_title: string;
   genre_id: number;
   music_list: MusicItemType[];
+  page: number;
+  size: number;
+  totalPage: number;
+  isFirstPage: boolean;
+  isLastPage: boolean;
+  isFetching: boolean;
+  isSpinner: boolean;
 }
 
-export interface RegisterMyPlayListType {
-  accessToken: string;
+export interface PostUserPlayListType {
   playerList: MusicItemType[];
   title: string;
 }
 
-export interface RequestMyPlayListType {
-  accessToken: string;
-}
-
 export interface MyPlayListType {
-  order: Number;
+  order: number;
   playList: MusicItemType[];
   title: string;
 }
 export interface SelectedMyPlayListType {
   playList: MusicItemType[];
   title: string;
+}
+
+export interface RequestGenreMusicType {
+  id: number;
+  size: number;
+  page: number;
 }

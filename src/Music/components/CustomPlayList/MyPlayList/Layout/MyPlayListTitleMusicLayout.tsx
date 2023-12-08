@@ -3,7 +3,8 @@ import * as Styled from './MyPlayListTitleMusicLayout.styled';
 import { useAppSelector } from 'shared/hooks/useReduxStore';
 import uuid from 'react-uuid';
 import MyPlayListMusicHeader from '../MyPlayListHeader';
-import { Music } from 'shared/components';
+import MusicItem from 'Music/components/MusicItem';
+import { memo } from 'react';
 
 const MyPlayListTitleMusicLayout = () => {
   const selectedPlayListStore = useAppSelector((state) => state.music.myPlayList.selected);
@@ -14,11 +15,11 @@ const MyPlayListTitleMusicLayout = () => {
       <MyPlayListMusicHeader title={selectedTitle} />
       <Styled.Layout>
         {selectedPlayList.map((music, idx) => (
-          <Music name={music.name} url={music.img_url} order={idx + 1} key={uuid()} />
+          <MusicItem name={music.name} url={music.img_url} order={idx + 1} key={uuid()} />
         ))}
       </Styled.Layout>
     </>
   );
 };
 
-export default MyPlayListTitleMusicLayout;
+export default memo(MyPlayListTitleMusicLayout);

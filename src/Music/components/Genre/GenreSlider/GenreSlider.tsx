@@ -1,5 +1,5 @@
+import { memo } from 'react';
 import * as Styled from './GenreSlider.styled';
-
 import { useAppSelector } from 'shared/hooks/useReduxStore';
 import { SwiperSlide } from 'swiper/react';
 import { useSwiper } from 'Music/hooks';
@@ -25,4 +25,4 @@ export const GenreSlider = () => {
   );
 };
 
-export default GenreSlider;
+export default memo(GenreSlider);
